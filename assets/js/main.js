@@ -586,7 +586,7 @@
             grabcursor: true,
             speed: 600,
             pagination: {
-                el: ".agrigo-dot-swiper-pagination",
+                el: ".AGRO-dot-swiper-pagination",
                 clickable: true,
             },
             breakpoints: {
@@ -712,7 +712,7 @@
             grabcursor: true,
             speed: 600,
             pagination: {
-                el: ".agrigo-dot-swiper-pagination",
+                el: ".AGRO-dot-swiper-pagination",
                 clickable: true,
             },
             breakpoints: {

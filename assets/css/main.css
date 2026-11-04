@@ -2751,6 +2751,19 @@ START: Header CSS
   padding: 21px 32px;
   border-radius: 0 0 0 20px;
 }
+.header .primary-header-inner .header-logo img,
+.side-menu-logo img,
+.mobile-side-menu .side-menu-head img,
+.footer-section-2 .footer-logo img,
+.footer-bottom img[src*="logo"] {
+  display: block;
+  height: 42px !important;
+  width: auto !important;
+  max-width: 180px;
+}
+.mobile-side-menu .side-menu-head img {
+  height: 36px !important;
+}
 .header .primary-header-inner .header-left-wrap {
   display: flex;
   align-items: center;

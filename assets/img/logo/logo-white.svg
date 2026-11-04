@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title">
+  <title id="title">AGRO EXPORT GROUP</title>
+  <g fill="#FFFFFF">
+    <path d="M53 12 C37 31 35 54 53 72 C71 54 69 31 53 12 Z"/>
+    <path d="M9 65 C12 91 28 111 49 117 C53 94 38 76 9 65 Z"/>
+    <path d="M97 65 C94 91 78 111 57 117 C53 94 68 76 97 65 Z"/>
+  </g>
+  <text x="125" y="105" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="-2">AGRO</text>
+</svg>
