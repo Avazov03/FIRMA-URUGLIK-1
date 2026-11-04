@@ -116,12 +116,28 @@
     });
   }
 
+  function syncUrl() {
+    try {
+      var params = new URLSearchParams();
+      if (currentFilter && currentFilter !== "all") params.set("cat", currentFilter);
+      if (currentQuery) params.set("q", currentQuery);
+      var qs = params.toString();
+      var next = window.location.pathname + (qs ? "?" + qs : "");
+      window.history.replaceState({}, "", next);
+    } catch (err) {
+      /* ignore */
+    }
+  }
+
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
       activateTab(tab.getAttribute("data-filter") || "all");
+      /* Tab bosilganda qidiruv matni tozalanadi — kategoriya to'liq ko'rinsin */
+      currentQuery = "";
       currentPage = 1;
+      syncUrl();
       render();
     });
   });
