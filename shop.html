@@ -19,6 +19,7 @@
 <link href="assets/css/carouselTicker.css" rel="stylesheet"/>
 <link href="assets/css/swiper.min.css" rel="stylesheet"/>
 <link href="assets/css/main.css" rel="stylesheet"/>
+<link href="assets/css/shop-catalog.css" rel="stylesheet"/>
 </head>
 <body>
 <!--Custom Cursor Wrapper -->
@@ -114,7 +115,7 @@
 <li>
 <a href="portfolio.html">Loyihalar</a>
 </li>
-<li><a href="shop.html">Do'kon</a></li>
+<li><a href="shop.html">Mahsulotlar</a></li>
 <li><a href="magazine.html">Jurnal</a></li>
 <li><a href="contact.html">Aloqa</a></li>
 </ul>
@@ -261,12 +262,12 @@
 <div class="container-fluid">
 <div class="breadcum-content">
 <h1 class="title" data-duration="1" data-split="line" data-stagger="0.2" data-text-animation="fade-in-bottom-line">
-                                Barcha mahsulotlar
+                                Mahsulotlar
                             </h1>
 <h2 class="sub-title">
 <a class="home" href="index.html">Bosh sahifa </a>
                                 -
-                                <a class="inner-page" href="shop.html">Barcha mahsulotlar</a>
+                                <a class="inner-page" href="shop.html">Mahsulotlar</a>
 </h2>
 </div>
 </div>
@@ -274,207 +275,296 @@
 <!-- ./ breadcum-section -->
 <section class="shop-section pb-130 pt-130">
 <div class="container">
+<div class="shop-catalog-tabs" role="tablist" aria-label="Mahsulot kategoriyalari">
+<button class="shop-tab is-active" type="button" data-filter="all">Barchasi</button>
+<button class="shop-tab" type="button" data-filter="uruglik">Urug'lik</button>
+<button class="shop-tab" type="button" data-filter="galla">Galla</button>
+<button class="shop-tab" type="button" data-filter="ogit">O'g'itlar</button>
+<button class="shop-tab" type="button" data-filter="himoya">Himoya vositalari</button>
+<button class="shop-tab" type="button" data-filter="ozuqa">Ozuqa</button>
+</div>
 <div class="shop-show-grid">
-<h3>20 ta natijadan 1–12 ko'rsatilmoqda</h3>
-<div class="form-item">
-<div class="form-item">
-<select class="form-control" id="select" name="select">
-<option value="">Standart saralash</option>
-<option value="">10 tani ko'rsatish</option>
-<option value="">20 tani ko'rsatish</option>
-</select>
+<h3 class="shop-result-count" id="shopResultCount">12 ta mahsulot</h3>
 </div>
-</div>
-</div>
-<div class="row gutter-gap-40-y fade-wrapper">
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="row gutter-gap-40-y" id="shopCatalogGrid">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-1.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Bug'doy urug'i" src="assets/img/shop/shop-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Oltin yomg'ir daraxti ko'chati</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Bug'doy urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-2.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Makka urug'i" src="assets/img/shop/shop-2.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Yashil bargli o'simlik tuvagi</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Makka urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-3.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Paxta urug'i" src="assets/img/shop/shop-3.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Gullagan yosh o'simlik </a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Paxta urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-4.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Arpa urug'i" src="assets/img/shop/shop-4.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Yorqin tuvakdagi o'simlik</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Arpa urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-5.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="No'xat urug'i" src="assets/img/shop/shop-6.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Monstera o'simligi </a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">No'xat urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-6.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Sabzi urug'i" src="assets/img/shop/shop-7.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Yashil banan o'simligi</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Sabzi urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-7.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Pomidor urug'i" src="assets/img/shop/shop-8.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Alohida tuvakdagi o'simlik</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Pomidor urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-8.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Piyoz urug'i" src="assets/img/shop/shop-9.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Oltin yomg'ir daraxti ko'chati</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Piyoz urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-9.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Kartoshka urug'i" src="assets/img/shop/shop-10.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Yashil tuvakdagi o'simlik</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Kartoshka urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-10.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Kivi urug'i" src="assets/img/shop/shop-11.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Burishgan bargli palma</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Kivi urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="uruglik">
 <div class="shop-item">
+<span>Urug'lik</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-11.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Guava urug'i" src="assets/img/shop/shop-12.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Oltin yomg'ir daraxti ko'chati</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Guava urug'i</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
-<div class="col-xl-3 col-lg-4 col-md-6 fade-top">
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="galla">
 <div class="shop-item">
+<span>Galla</span>
 <div class="shop-thumb">
-<a href="shop-details.html"><img alt="img" src="assets/img/shop/shop-12.png"/></a>
-<a class="card-btn" href="shop-details.html">
-                                            Batafsil
-                                        </a>
+<a href="shop-details.html"><img alt="Bug'doy (galla)" src="assets/img/shop/cat-galla-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
 </div>
 <div class="shop-content">
-<h3 class="title"><a href="shop-details.html">Burishgan bargli palma</a>
-</h3>
-<h3 class="price">$120.00</h3>
+<h3 class="title"><a href="shop-details.html">Bug'doy (galla)</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="galla">
+<div class="shop-item">
+<span>Galla</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Arpa" src="assets/img/shop/cat-galla-2.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Arpa</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="ogit">
+<div class="shop-item">
+<span>O'g'it</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Azotli o'g'it" src="assets/img/shop/cat-ogit-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Azotli o'g'it</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="ogit">
+<div class="shop-item">
+<span>O'g'it</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Fosforli o'g'it" src="assets/img/shop/cat-ogit-2.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Fosforli o'g'it</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="ogit">
+<div class="shop-item">
+<span>O'g'it</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Kompleks o'g'it" src="assets/img/shop/cat-ogit-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Kompleks o'g'it</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="himoya">
+<div class="shop-item">
+<span>Himoya</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Gerbitsid" src="assets/img/shop/cat-himoya-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Gerbitsid</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="himoya">
+<div class="shop-item">
+<span>Himoya</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Fungitsid" src="assets/img/shop/cat-himoya-2.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Fungitsid</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="himoya">
+<div class="shop-item">
+<span>Himoya</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Insektitsid" src="assets/img/shop/cat-himoya-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Insektitsid</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="ozuqa">
+<div class="shop-item">
+<span>Ozuqa</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Chorva ozuqasi" src="assets/img/shop/cat-ozuqa-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Chorva ozuqasi</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6 shop-card" data-category="ozuqa">
+<div class="shop-item">
+<span>Ozuqa</span>
+<div class="shop-thumb">
+<a href="shop-details.html"><img alt="Aralash ozuqa" src="assets/img/shop/cat-ozuqa-1.png"/></a>
+<a class="card-btn" href="shop-details.html">Batafsil</a>
+</div>
+<div class="shop-content">
+<h3 class="title"><a href="shop-details.html">Aralash ozuqa</a></h3>
+<h3 class="price">Narx so'rov asosida</h3>
 </div>
 </div>
 </div>
 </div>
 <div class="pagination-wrap">
-<ul class="pagination justify-content-center">
-<li><a class="active" href="#">01</a></li>
-<li><a href="#">02</a></li>
-<li><a href="#">03</a></li>
-<li><a href="#">04</a></li>
-<li><a href="#">05</a></li>
+<ul class="pagination justify-content-center" id="shopPagination">
+<li><a class="active" href="#" data-page="1">01</a></li>
+<li><a href="#" data-page="2">02</a></li>
 </ul>
 </div>
 </div>
@@ -604,5 +694,6 @@
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/gsap.js"></script>
+<script src="assets/js/shop-catalog.js"></script>
 </body>
 </html>

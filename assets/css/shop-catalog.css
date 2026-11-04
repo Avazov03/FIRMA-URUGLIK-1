@@ -1,0 +1,81 @@
+/* Mahsulotlar katalog — Home 1 tokenlari */
+.shop-catalog-tabs {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+  pointer-events: auto;
+}
+
+.shop-catalog-tabs .shop-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(0, 101, 47, 0.22);
+  background: #fff;
+  color: #00652f;
+  font-family: var(--cp-ff-heading);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shop-catalog-tabs .shop-tab:hover {
+  border-color: #65cb3b;
+  color: #00652f;
+}
+
+.shop-catalog-tabs .shop-tab.is-active {
+  background: #65cb3b;
+  border-color: #65cb3b;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(101, 203, 59, 0.28);
+}
+
+.shop-show-grid .shop-result-count {
+  margin: 0;
+  font-family: var(--cp-ff-body);
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* Asl Agrigo: rasm cho'zilmaydi, krem thumb fon ko'rinadi */
+.shop-section .shop-item .shop-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+
+/* Hover — asl qoida (yarim shaffof), qalin solid emas */
+.shop-section .shop-item .shop-thumb::after {
+  background-color: rgba(16, 85, 31, 0.4) !important;
+}
+
+.shop-card.is-hidden {
+  display: none !important;
+}
+
+.shop-section .pagination-wrap {
+  margin-top: 48px;
+}
+
+.shop-section .pagination-wrap .pagination a.is-disabled {
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+@media (max-width: 575px) {
+  .shop-catalog-tabs .shop-tab {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
