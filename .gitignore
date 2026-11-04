@@ -1,18 +1,18 @@
-# Secrets / scrape junk
-cookies.txt
-hts-cache/
-hts-log.txt
-preview.themeforest.net/
-
-# Broken SingleFile ThemeForest snapshot (real theme is in site/)
-Agrigo*.html
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-
-# OS / editor
+# OS
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Editor / local
+.vscode/
+*.log
+
+# Env / secrets
+.env
+.env.*
+cookies.txt
+
+# Python (if tools added later)
+__pycache__/
+*.pyc
+.venv/

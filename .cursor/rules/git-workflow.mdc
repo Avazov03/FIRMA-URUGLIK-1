@@ -10,6 +10,7 @@ alwaysApply: true
 - **GitHub repo:** `https://github.com/Avazov03/FIRMA-URUGLIK-1.git`
 - **Default branch:** `main`
 - Remote name: `origin`
+- **Project layout:** HTML sahifalar ildizda, stillar/skriptlar/rasmlar `assets/` ichida (eski `site/` papkasi yo‘q).
 
 ## After any project-changing work
 
