@@ -1,0 +1,25 @@
+---
+description: Agrigo Home 1 is the locked design DNA for AGRO EXPORT GROUP site
+alwaysApply: true
+---
+
+# Design base: Home 1 only
+
+## Locked decision (do not reopen unless user asks)
+
+- **Primary visual base:** Agrigo `index.html` (Home 1) — the hero/header style the user approved.
+- **Do not change Home 1 design yet** until the user explicitly says to adapt content/branding.
+- `index-2.html` / `index-3.html` are not the design source. Prefer removing later; do not build from them.
+- Git history restore of Home 1 should rarely be needed; current `index.html` is the source of truth.
+
+## When building or adapting other pages
+
+- Reuse Home 1 DNA only: header/top-bar, logo treatment, nav patterns, `cp-primary-btn`, section headings, spacing (`pt-130` etc.), green tokens (`#65CB3B` / `#00652F`), footer, GSAP/SplitText patterns.
+- New pages (Products, Magazine, Partners, Agronomy) must look like native parts of Home 1 — not a foreign template.
+- Drop/remap farm-shop pages (cart, checkout, pricing) when adapting IA; keep visual language from Home 1.
+
+## Company context (content later)
+
+- Client: AGRO EXPORT GROUP INCORPORATION MCHJ (STIR 300627183)
+- Site type: corporate + seed catalog + knowledge/magazine — not a generic farm landing
+- Only confirmed facts on the site; no unverified distributor/export claims
