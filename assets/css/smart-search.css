@@ -1,0 +1,195 @@
+/* Aqlli qidiruv — popup suggestions (Home 1 DNA) */
+
+#popup-search-box.toggled {
+  height: auto;
+  min-height: 120px;
+  max-height: 92vh;
+  padding: 36px 0 28px;
+  overflow: visible;
+  white-space: normal;
+}
+
+#popup-search-box.toggled.has-suggest {
+  /* Takliflar popup ichida — click yutilmasin */
+  padding-bottom: 20px;
+}
+
+#popup-search-box .box-inner-wrap {
+  overflow: visible;
+  height: auto;
+  min-height: 80px;
+}
+
+/* X-kursor faqat bo'sh joyda; forma/taklifda oddiy pointer */
+#popup-search-box .box-inner-wrap:hover {
+  cursor: url("../img/cross.png"), auto;
+}
+
+#popup-search-box .aeg-smart-form,
+#popup-search-box .aeg-smart-form:hover,
+#popup-search-box .aeg-smart-suggest,
+#popup-search-box .aeg-smart-suggest:hover,
+#popup-search-box .aeg-suggest-row,
+#popup-search-box .aeg-suggest-row:hover,
+#popup-search-box input#popup-search,
+#popup-search-box input#popup-search:hover {
+  cursor: auto;
+}
+
+#popup-search-box .aeg-suggest-row,
+#popup-search-box .aeg-suggest-row:hover {
+  cursor: pointer;
+}
+
+#popup-search-box .aeg-smart-form {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+#popup-search-box .aeg-smart-form input#popup-search {
+  border-color: rgba(101, 203, 59, 0.45);
+}
+
+#popup-search-box .aeg-smart-form input#popup-search:focus {
+  border-color: #65cb3b;
+  box-shadow: 0 0 0 3px rgba(101, 203, 59, 0.15);
+}
+
+.aeg-smart-suggest {
+  display: none;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  margin-top: 12px;
+  z-index: 120;
+  background: #fff;
+  border: 1px solid rgba(0, 101, 47, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 18px 48px rgba(0, 40, 20, 0.12);
+  max-height: min(52vh, 420px);
+  overflow-y: auto;
+  text-align: left;
+  white-space: normal;
+  pointer-events: auto;
+}
+
+.aeg-smart-suggest.open {
+  display: block;
+  animation: aegSuggestIn 160ms ease;
+}
+
+@keyframes aegSuggestIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aeg-suggest-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.15s ease;
+  text-decoration: none !important;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.aeg-suggest-row:last-child {
+  border-bottom: 0;
+}
+
+.aeg-suggest-row:hover,
+.aeg-suggest-row.is-active {
+  background: rgba(101, 203, 59, 0.1);
+}
+
+.aeg-suggest-ic {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 101, 47, 0.08);
+  color: #00652f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.aeg-suggest-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.aeg-suggest-label > span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.3;
+}
+
+.aeg-suggest-label small {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aeg-suggest-label mark {
+  background: rgba(101, 203, 59, 0.35);
+  color: inherit;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+
+.aeg-suggest-go {
+  flex: 0 0 auto;
+  color: #65cb3b;
+  opacity: 0.7;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.aeg-suggest-empty {
+  padding: 16px 18px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+@media (max-width: 767px) {
+  #popup-search-box.toggled {
+    padding-top: 52px;
+  }
+
+  .aeg-smart-suggest {
+    max-height: 45vh;
+  }
+
+  .aeg-suggest-label > span {
+    font-size: 14px;
+  }
+}

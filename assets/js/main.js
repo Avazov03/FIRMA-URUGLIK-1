@@ -319,11 +319,17 @@
                 $("#popup-search").focus();
             });
 
-            $("#popup-search-box input").on("click", function (e) {
-                e.stopPropagation();
+            $("#popup-search-box").on("click", function (e) {
+                /* Forma / taklif ichida — yopilmasin (navigatsiya ishlasin) */
+                if ($(e.target).closest(".aeg-smart-form, .aeg-smart-suggest, #popup-search, form").length) {
+                    e.stopPropagation();
+                    return;
+                }
+                $("#popup-search-box").removeClass("toggled");
             });
 
-            $("#popup-search-box, body").on("click", function () {
+            $(document).on("click", function (e) {
+                if ($(e.target).closest("#popup-search-box, .dl-search-icon").length) return;
                 $("#popup-search-box").removeClass("toggled");
             });
         });

@@ -9,14 +9,54 @@
 
   var PAGE_SIZE = 8;
   var currentFilter = "all";
+  var currentQuery = "";
   var currentPage = 1;
+
+  function norm(value) {
+    if (window.AEGSmartSearch && window.AEGSmartSearch.normalize) {
+      return window.AEGSmartSearch.normalize(value);
+    }
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[ʻʼ`´’]/g, "'")
+      .replace(/\s+/g, " ");
+  }
+
+  function compact(value) {
+    if (window.AEGSmartSearch && window.AEGSmartSearch.compact) {
+      return window.AEGSmartSearch.compact(value);
+    }
+    return norm(value).replace(/['\s-]/g, "");
+  }
+
+  function cardText(card) {
+    return (
+      (card.getAttribute("data-category") || "") +
+      " " +
+      (card.textContent || "")
+    );
+  }
+
+  function cardMatchesQuery(card, q) {
+    if (!q) return true;
+    var hay = norm(cardText(card));
+    var hayC = compact(cardText(card));
+    var ql = norm(q);
+    var qC = compact(q);
+    if (hay.indexOf(ql) !== -1 || hayC.indexOf(qC) !== -1) return true;
+    var parts = ql.split(" ").filter(Boolean);
+    return parts.every(function (p) {
+      return hay.indexOf(p) !== -1 || hayC.indexOf(compact(p)) !== -1;
+    });
+  }
 
   function matchedCards() {
     return cards.filter(function (card) {
-      return (
+      var catOk =
         currentFilter === "all" ||
-        card.getAttribute("data-category") === currentFilter
-      );
+        card.getAttribute("data-category") === currentFilter;
+      return catOk && cardMatchesQuery(card, currentQuery);
     });
   }
 
@@ -67,17 +107,20 @@
     renderPagination(totalPages);
   }
 
+  function activateTab(filter) {
+    currentFilter = filter || "all";
+    tabs.forEach(function (t) {
+      var on = (t.getAttribute("data-filter") || "all") === currentFilter;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      tabs.forEach(function (t) {
-        t.classList.remove("is-active");
-        t.setAttribute("aria-selected", "false");
-      });
-      tab.classList.add("is-active");
-      tab.setAttribute("aria-selected", "true");
-      currentFilter = tab.getAttribute("data-filter") || "all";
+      activateTab(tab.getAttribute("data-filter") || "all");
       currentPage = 1;
       render();
     });
@@ -103,5 +146,25 @@
     });
   }
 
+  /* Deep-link from smart search: ?cat=&q= */
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get("cat");
+    var q = params.get("q");
+    if (cat) activateTab(cat);
+    if (q) currentQuery = q;
+  } catch (err) {
+    /* ignore */
+  }
+
   render();
+
+  if (currentQuery) {
+    var section = document.querySelector(".shop-section");
+    if (section) {
+      window.setTimeout(function () {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 120);
+    }
+  }
 })();
