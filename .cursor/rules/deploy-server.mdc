@@ -1,0 +1,61 @@
+---
+description: agro.zonic.fit server deploy — remember host, ask after work, never commit keys
+alwaysApply: true
+---
+
+# Server deploy (FIRMA 1 → agro.zonic.fit)
+
+## Remember permanently (do not ask again)
+
+| Field | Value |
+|-------|--------|
+| **Public domain** | `https://agro.zonic.fit` |
+| **DNS** | A record `agro.zonic.fit` → `3.65.92.39` |
+| **Static (public) IPv4** | `3.65.92.39` |
+| **Private IPv4** | `172.26.11.220` |
+| **Public IPv6** | `2a05:d014:1091:2d00:768b:8b11:2d63:34ae` |
+| **SSH host** | `3.65.92.39` (prefer domain once DNS/SSH ready: `agro.zonic.fit`) |
+| **SSH key (local only)** | `%USERPROFILE%\.ssh\agro-zonic-fit.pem` |
+| **SSH user** | `ubuntu` (confirmed) |
+| **Web root** | `/var/www/agro.zonic.fit` |
+| **Nginx site** | `/etc/nginx/sites-available/agro.zonic.fit` (enabled + Let’s Encrypt HTTPS) |
+| **GitHub source** | `https://github.com/Avazov03/FIRMA-URUGLIK-1.git` → `main` |
+
+## Secrets — hard rules
+
+- **Never** commit the PEM/private key, `.env`, or server passwords into the repo.
+- **Never** paste the private key into HTML/CSS/JS or chat replies.
+- Key lives only at `%USERPROFILE%\.ssh\agro-zonic-fit.pem` (outside the project).
+
+## After any project-changing work
+
+Ask **both** (same turn as git ask, unless user already ordered one or both):
+
+1. «Commit va git push qilaymi?»
+2. «Serverga deploy qilaymi? (`agro.zonic.fit`)»
+
+Only deploy when the user says yes (or already ordered deploy in the same message).
+
+## Deploy procedure (when approved)
+
+1. Ensure latest approved changes are on `origin/main` (commit+push first if user approved).
+2. On the server, update the static clone and reload nginx only if needed:
+
+```bash
+ssh -i "%USERPROFILE%\.ssh\agro-zonic-fit.pem" -o IdentitiesOnly=yes ubuntu@3.65.92.39 "cd /var/www/agro.zonic.fit && git fetch origin && git reset --hard origin/main"
+```
+
+3. If nginx/site config changed: `sudo nginx -t && sudo systemctl reload nginx`.
+4. Smoke-check: `https://agro.zonic.fit`
+
+## After successful deploy — confirm with checkmarks
+
+- ✅ Commit qildim (if done)
+- ✅ Push qildim (`origin/main`) (if done)
+- ✅ Serverga deploy qildim (`https://agro.zonic.fit`)
+
+## Example SSH (Windows)
+
+```bash
+ssh -i "%USERPROFILE%\.ssh\agro-zonic-fit.pem" -o IdentitiesOnly=yes ubuntu@3.65.92.39
+```

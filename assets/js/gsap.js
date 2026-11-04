@@ -740,13 +740,13 @@
                         duration: 0.3,
                         xPercent: is_rtl() ? 50 : -50,
                         yPercent: -60,
-                        width: 110,
-                        height: 110,
+                        width: 120,
+                        height: 120,
                         opacity: 1,
                         borderWidth: 0,
                         zIndex: 1,
-                        backdropFilter: "blur(14px)",
-                        backgroundColor: "#fff"
+                        backdropFilter: "blur(0px)",
+                        backgroundColor: "#65CB3B"
                     });
 
                     gsap.to(".cursorDot-view", {

@@ -14,13 +14,14 @@ alwaysApply: true
 
 ## After any project-changing work
 
-1. When the user asks for a change that modifies the project (code, pages, assets, config), **ask first** in chat:
+1. When the user asks for a change that modifies the project (code, pages, assets, config), **ask first** in chat (also see `deploy-server.mdc`):
    - «Commit va git push qilaymi?»
+   - «Serverga deploy qilaymi? (`agro.zonic.fit`)»
 2. Only commit/push if the user says yes (or already ordered commit/push in the same message).
 3. After a successful commit+push, reply with a short confirmation and mark done with a checkmark, e.g.:
    - ✅ Commit qildim
    - ✅ Push qildim (`origin/main`)
-4. Do **not** commit secrets: `cookies.txt`, `.env`, credentials, tokens.
+4. Do **not** commit secrets: `cookies.txt`, `.env`, credentials, tokens, SSH private keys.
 
 ## Commands (when approved)
 
