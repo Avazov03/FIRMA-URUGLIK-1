@@ -235,6 +235,58 @@
             menuSticky(minWidth);
         }
 
+        // Active nav item for current page
+        function setActiveNav() {
+            var path = (window.location.pathname || "").split("/").pop() || "index.html";
+            path = path.split("?")[0].split("#")[0];
+            if (!path) {
+                path = "index.html";
+            }
+
+            var related = {
+                "blog-details.html": "blog-grid.html",
+                "portfolio-details.html": "portfolio.html",
+                "shop-details.html": "shop.html",
+                "service-details.html": "service.html",
+                "team-details.html": "team.html",
+            };
+
+            var $scopes = $(".header-menu-wrap, .side-menu-wrap, .mean-nav, .mobile-side-menu");
+            $scopes.find("li").removeClass("active");
+
+            function markMatch(fileName) {
+                var found = false;
+                $scopes.find("a[href]").each(function () {
+                    var href = ($(this).attr("href") || "").split("?")[0].split("#")[0];
+                    if (!href || href === "#" || href.indexOf("javascript:") === 0) {
+                        return;
+                    }
+                    var file = href.split("/").pop();
+                    var isHome =
+                        fileName === "index.html" &&
+                        (file === "index.html" || file === "" || file === "./");
+                    if (file === fileName || isHome) {
+                        found = true;
+                        var $li = $(this).closest("li");
+                        $li.addClass("active");
+                        $li.parents("li").each(function () {
+                            if ($(this).children("ul").length) {
+                                $(this).addClass("active");
+                            }
+                        });
+                    }
+                });
+                return found;
+            }
+
+            // Exact page first; fall back to related parent section
+            if (!markMatch(path) && related[path]) {
+                markMatch(related[path]);
+            }
+        }
+
+        setActiveNav();
+
         //Mobile Menu Js
         $(".mobile-menu-items").meanmenu({
             meanMenuContainer: ".side-menu-wrap",
@@ -243,6 +295,9 @@
             meanRemoveAttrs: true,
             meanExpand: ['<i class="fa-solid fa-caret-down"></i>'],
         });
+
+        // Re-apply after MeanMenu clones the menu (attrs stripped)
+        setActiveNav();
 
         // Mobile Sidemenu
         $(".mobile-side-menu-toggle").on("click", function () {

@@ -2817,8 +2817,19 @@ START: Header CSS
 .header .primary-header-inner .header-menu-wrap ul li a i {
   font-size: 13px;
 }
-.header .primary-header-inner .header-menu-wrap ul li.active a {
+.header .primary-header-inner .header-menu-wrap ul li.active > a {
   color: var(--cp-color-theme-primary);
+}
+.header .primary-header-inner .header-menu-wrap > .mobile-menu-items > ul > li.active > a:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background-color: var(--cp-color-theme-primary);
 }
 .header .primary-header-inner .header-menu-wrap ul li.active ul li a {
   color: var(--cp-color-heading-primary);
