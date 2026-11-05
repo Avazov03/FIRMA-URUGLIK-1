@@ -30,7 +30,7 @@
     don: ["galla", "don", "bugdoy", "arpa"],
     kontakt: ["boglanish", "telefon", "manzil", "contact"],
     telefon: ["boglanish", "kontakt", "call"],
-    manzil: ["boglanish", "address", "ipak"],
+    manzil: ["boglanish", "address", "mustaqillik"],
     kompaniya: ["about", "firma", "agro", "export"],
     firma: ["kompaniya", "about", "agro"],
     jurnal: ["magazine", "maqola", "blog"],

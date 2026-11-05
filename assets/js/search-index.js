@@ -342,7 +342,7 @@ window.AEG_SEARCH_INDEX = [
     type: "page",
     title: "Bog'lanish",
     url: "contact.html",
-    keywords: "kontakt telefon manzil address buyuk ipak yoli 29 email call",
+    keywords: "kontakt telefon manzil address mustaqillik shox 59 mirzo ulugbek email call hello.lawlab 921958008",
     desc: "Aloqa ma'lumotlari",
   },
   {
