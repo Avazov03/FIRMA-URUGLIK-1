@@ -46,7 +46,13 @@ $(function() {
 			if (data.responseText !== '') {
 				$(formMessages).text(data.responseText);
 			} else {
-				$(formMessages).text('Oops! An error occured and your message could not be sent.');
+				var lang = (window.AEG_I18N && window.AEG_I18N.lang) || 'uz';
+				var failText = lang === 'ru'
+					? 'Сообщение не отправилось. Попробуйте ещё раз.'
+					: lang === 'en'
+					? 'Your message could not be sent. Please try again.'
+					: 'Xabar yuborilmadi. Qayta urinib ko‘ring.';
+				$(formMessages).text(failText);
 			}
 		});
 

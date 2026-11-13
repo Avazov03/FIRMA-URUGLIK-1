@@ -1,0 +1,112 @@
+/* Language switch — UZ / RU / EN. Does not change Home 1 layout. */
+
+html.i18n-wait body {
+  visibility: hidden;
+}
+
+/* Kumbh Sans and Bricolage Grotesque have no Cyrillic. Manrope is only a fallback glyph. */
+html[lang="ru"] {
+  --cp-ff-body: "Kumbh Sans", "Manrope", sans-serif;
+  --cp-ff-heading: "Bricolage Grotesque", "Manrope", sans-serif;
+  --cp-ff-p: "Kumbh Sans", "Manrope", sans-serif;
+}
+
+.aeg-lang {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 999px;
+  gap: 1px;
+  flex: 0 0 auto;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.aeg-lang button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  font-family: var(--cp-ff-body, "Kumbh Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  text-transform: none;
+}
+
+.aeg-lang button:focus-visible {
+  outline: 2px solid #65cb3b;
+  outline-offset: 2px;
+}
+
+.aeg-lang--bar,
+.aeg-lang--menu,
+.aeg-lang--float {
+  border: 1px solid rgba(0, 101, 47, 0.22);
+  background: #fff;
+}
+
+.aeg-lang--bar button,
+.aeg-lang--menu button,
+.aeg-lang--float button {
+  color: #00652f;
+}
+
+.aeg-lang--bar button.is-active,
+.aeg-lang--menu button.is-active,
+.aeg-lang--float button.is-active {
+  background: #00652f;
+  color: #fff;
+}
+
+.aeg-lang--bar button:hover:not(.is-active),
+.aeg-lang--menu button:hover:not(.is-active),
+.aeg-lang--float button:hover:not(.is-active) {
+  background: rgba(0, 101, 47, 0.08);
+}
+
+.header .primary-header-inner .header-right-wrap .aeg-lang--bar {
+  margin-right: 0;
+}
+
+.header .primary-header-inner .header-right-wrap {
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 1400px) {
+  .header .primary-header-inner .header-menu-wrap ul li {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aeg-lang--bar button {
+    padding: 5px 6px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  .header .primary-header-inner .header-right-wrap {
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+}
+
+.aeg-lang-row {
+  display: flex;
+  margin: -8px 0 22px;
+}
+
+.aeg-lang--float {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 40, 18, 0.12);
+}

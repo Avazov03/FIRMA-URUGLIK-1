@@ -62,7 +62,10 @@
 
   function setCount(n) {
     if (!countEl) return;
-    countEl.textContent = n + " ta mahsulot";
+    countEl.textContent =
+      window.AEG_I18N && window.AEG_I18N.productCount
+        ? window.AEG_I18N.productCount(n)
+        : n + " ta mahsulot";
   }
 
   function renderPagination(totalPages) {
@@ -81,7 +84,9 @@
     }
     if (totalPages > 1) {
       html +=
-        '<li><a href="#" data-page="next" aria-label="Keyingi"' +
+        '<li><a href="#" data-page="next" aria-label="' +
+        (window.AEG_I18N ? window.AEG_I18N.t("Keyingi") : "Keyingi") +
+        '"' +
         (currentPage >= totalPages ? ' class="is-disabled"' : "") +
         '><i class="fa-regular fa-arrow-right"></i></a></li>';
     }

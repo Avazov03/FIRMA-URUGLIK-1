@@ -80,8 +80,16 @@
     var title = normalize(item.title);
     var titleC = compact(item.title);
     var qC = compact(ql);
+    var extra = "";
+    if (window.AEG_I18N && window.AEG_I18N.variants) {
+      extra =
+        " " +
+        window.AEG_I18N.variants(item.title) +
+        " " +
+        window.AEG_I18N.variants(item.desc || "");
+    }
     var hay = normalize(
-      [item.title, item.desc, item.keywords, item.cat].filter(Boolean).join(" ")
+      [item.title, item.desc, item.keywords, item.cat, extra].filter(Boolean).join(" ")
     );
     var hayC = compact(hay);
 
@@ -206,8 +214,11 @@
         return;
       }
       if (!items.length) {
+        var emptyText = window.AEG_I18N
+          ? window.AEG_I18N.t("Natija topilmadi. Boshqa kalit so'z sinab ko'ring.")
+          : "Natija topilmadi. Boshqa kalit so'z sinab ko'ring.";
         suggest.innerHTML =
-          '<div class="aeg-suggest-empty">Natija topilmadi. Boshqa kalit so‘z sinab ko‘ring.</div>';
+          '<div class="aeg-suggest-empty">' + emptyText + "</div>";
         suggest.classList.add("open");
         box.classList.add("has-suggest");
         return;
@@ -216,6 +227,9 @@
         .map(function (it, i) {
           var meta = TYPE_META[it.type] || TYPE_META.page;
           var href = it.url || "#";
+          var showTitle = window.AEG_I18N ? window.AEG_I18N.t(it.title) : it.title;
+          var showDesc = it.desc ? (window.AEG_I18N ? window.AEG_I18N.t(it.desc) : it.desc) : "";
+          var showLabel = window.AEG_I18N ? window.AEG_I18N.t(meta.label) : meta.label;
           return (
             '<a class="aeg-suggest-row' +
             (i === 0 ? " is-active" : "") +
@@ -229,11 +243,11 @@
             '" aria-hidden="true"></i></span>' +
             '<span class="aeg-suggest-label">' +
             "<span>" +
-            highlight(it.title, query) +
+            highlight(showTitle, query) +
             "</span>" +
             "<small>" +
-            escapeHtml(meta.label) +
-            (it.desc ? " · " + escapeHtml(it.desc) : "") +
+            escapeHtml(showLabel) +
+            (showDesc ? " · " + escapeHtml(showDesc) : "") +
             "</small>" +
             "</span>" +
             '<span class="aeg-suggest-go"><i class="fa-regular fa-arrow-right"></i></span>' +
