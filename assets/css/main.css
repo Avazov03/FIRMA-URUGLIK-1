@@ -3711,7 +3711,7 @@ START: Header CSS
   border-color: var(--cp-color-theme-primary);
 }
 #popup-search-box .box-inner-wrap:hover {
-  cursor: url(../img/cross.png), auto;
+  cursor: url(../img/cross.svg) 16 16, auto;
 }
 #popup-search-box .box-inner-wrap .search-close {
   position: absolute;

@@ -250,11 +250,9 @@
             }
 
             var related = {
-                "blog-details.html": "blog-grid.html",
-                "portfolio-details.html": "portfolio.html",
+                "blog-details.html": "magazine.html",
                 "shop-details.html": "shop.html",
                 "service-details.html": "service.html",
-                "team-details.html": "team.html",
             };
 
             var $scopes = $(".header-menu-wrap, .side-menu-wrap, .mean-nav, .mobile-side-menu");

@@ -10,6 +10,7 @@
     }
   } catch (e) {}
   document.documentElement.setAttribute("lang", lang);
+  window.odometerOptions = { format: "d" };
   try {
     if (sessionStorage.getItem("aeg-preloaded") === "1" || window.matchMedia("(pointer: coarse)").matches) {
       document.documentElement.classList.add("aeg-no-preloader");

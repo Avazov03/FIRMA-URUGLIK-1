@@ -22,7 +22,7 @@
 
 /* X-kursor faqat bo'sh joyda; forma/taklifda oddiy pointer */
 #popup-search-box .box-inner-wrap:hover {
-  cursor: url("../img/cross.png"), auto;
+  cursor: url("../img/cross.svg") 16 16, auto;
 }
 
 #popup-search-box .aeg-smart-form,
