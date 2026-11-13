@@ -135,6 +135,18 @@
     }
   }
 
+  function fitTitles() {
+    var titles = document.querySelectorAll(".breadcum-content .title");
+    for (var i = 0; i < titles.length; i++) {
+      var words = fold(titles[i].textContent).split(" ");
+      var longest = 0;
+      for (var j = 0; j < words.length; j++) longest = Math.max(longest, words[j].length);
+      if (longest >= 9) titles[i].style.setProperty("--aeg-longest", longest);
+      else titles[i].style.removeProperty("--aeg-longest");
+    }
+  }
+  fitTitles();
+
   document.documentElement.setAttribute("lang", lang);
   try {
     localStorage.setItem("aeg-lang", lang);
@@ -200,5 +212,6 @@
     t: t,
     variants: variants,
     productCount: productCount,
+    fitTitles: fitTitles,
   };
 })();

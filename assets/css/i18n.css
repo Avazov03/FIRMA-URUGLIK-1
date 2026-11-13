@@ -11,6 +11,36 @@ html[lang="ru"] {
   --cp-ff-p: "Kumbh Sans", "Manrope", sans-serif;
 }
 
+/* SplitText wraps page titles letter by letter, so the longest word must fit on one line.
+   --aeg-longest is the letter count of that word, set by i18n.js. */
+@media (max-width: 767.98px) {
+  .breadcum-content .title {
+    font-size: clamp(26px, 8vw, 50px);
+  }
+}
+
+.breadcum-content .title[style*="--aeg-longest"] {
+  font-size: min(120px, calc((100vw - 240px) / (var(--aeg-longest) * 0.72)));
+}
+
+@media (max-width: 1399.98px) {
+  .breadcum-content .title[style*="--aeg-longest"] {
+    font-size: min(100px, calc((100vw - 200px) / (var(--aeg-longest) * 0.72)));
+  }
+}
+
+@media (max-width: 992px) {
+  .breadcum-content .title[style*="--aeg-longest"] {
+    font-size: min(80px, calc((100vw - 120px) / (var(--aeg-longest) * 0.72)));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .breadcum-content .title[style*="--aeg-longest"] {
+    font-size: min(clamp(26px, 8vw, 50px), calc((100vw - 100px) / (var(--aeg-longest) * 0.72)));
+  }
+}
+
 .aeg-lang {
   display: inline-flex;
   align-items: center;

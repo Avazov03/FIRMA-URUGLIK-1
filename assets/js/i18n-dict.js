@@ -516,7 +516,9 @@
     ["Asosiy jihatlar", "Главное", "Key points"],
     ["Xizmat tafsilotlari", "Подробности услуги", "Service details"],
     ["Boshqa xizmatlar", "Другие услуги", "Other services"],
-    ["Mahsulotlarni ko'rish", "Смотреть продукцию", "View products"]
+    ["Mahsulotlarni ko'rish", "Смотреть продукцию", "View products"],
+    ["So'rov savati", "Корзина запроса", "Request cart"],
+    ["So'rov savati — AGRO EXPORT GROUP", "Корзина запроса — AGRO EXPORT GROUP", "Request cart — AGRO EXPORT GROUP"]
   ];
 
   function fold(value) {

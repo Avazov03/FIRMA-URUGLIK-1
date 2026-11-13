@@ -200,4 +200,5 @@
   renderProduct();
   renderService();
   prefillContact();
+  if (window.AEG_I18N && window.AEG_I18N.fitTitles) window.AEG_I18N.fitTitles();
 })();
