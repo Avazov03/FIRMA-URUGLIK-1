@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 23.5 100 100" role="img" aria-labelledby="title">
   <title id="title">AGRO</title>
   <g fill="#55C936">
-    <path d="M64 10 C42 35 41 61 64 81 C87 61 86 35 64 10 Z"/>
-    <path d="M11 57 C15 88 34 111 59 117 C64 89 45 67 11 57 Z"/>
-    <path d="M117 57 C113 88 94 111 69 117 C64 89 83 67 117 57 Z"/>
+    <path d="M53 30 C37 49 35 72 53 90 C71 72 69 49 53 30 Z"/>
+    <path d="M9 65 C12 91 28 111 49 117 C53 94 38 76 9 65 Z"/>
+    <path d="M97 65 C94 91 78 111 57 117 C53 94 68 76 97 65 Z"/>
   </g>
 </svg>

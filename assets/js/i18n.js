@@ -159,35 +159,93 @@
   function makeSwitcher(kind) {
     var wrap = document.createElement("div");
     wrap.className = "aeg-lang aeg-lang--" + kind;
-    wrap.setAttribute("role", "group");
-    wrap.setAttribute("aria-label", GROUP[lang] || GROUP.uz);
+    var label = GROUP[lang] || GROUP.uz;
+    var html =
+      '<button type="button" class="aeg-lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="' +
+      label + ": " + NAMES[lang] + '">' +
+      '<i class="fa-regular fa-globe" aria-hidden="true"></i>' +
+      "<span>" + lang.toUpperCase() + "</span>" +
+      '<i class="fa-solid fa-chevron-down aeg-lang-chev" aria-hidden="true"></i>' +
+      "</button>" +
+      '<div class="aeg-lang-menu" role="listbox" aria-label="' + label + '">';
     CODES.forEach(function (code) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.setAttribute("data-set-lang", code);
-      btn.title = NAMES[code];
-      btn.setAttribute("aria-pressed", code === lang ? "true" : "false");
-      if (code === lang) btn.className = "is-active";
-      btn.textContent = code.toUpperCase();
-      wrap.appendChild(btn);
+      var on = code === lang;
+      html +=
+        '<button type="button" role="option" aria-selected="' + on + '" class="aeg-lang-opt' + (on ? " is-active" : "") +
+        '" data-set-lang="' + code + '" lang="' + code + '">' +
+        '<span class="aeg-lang-name">' + NAMES[code] + "<small>" + code.toUpperCase() + "</small></span>" +
+        '<i class="fa-solid fa-check" aria-hidden="true"></i>' +
+        "</button>";
     });
+    wrap.innerHTML = html + "</div>";
     return wrap;
+  }
+
+  function closeMenus(except) {
+    var open = document.querySelectorAll(".aeg-lang.is-open");
+    for (var i = 0; i < open.length; i++) {
+      if (open[i] === except) continue;
+      open[i].classList.remove("is-open");
+      open[i].querySelector(".aeg-lang-trigger").setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function openMenu(wrap, focusActive) {
+    closeMenus(wrap);
+    wrap.classList.add("is-open");
+    wrap.querySelector(".aeg-lang-trigger").setAttribute("aria-expanded", "true");
+    if (focusActive) {
+      var active = wrap.querySelector(".aeg-lang-opt.is-active") || wrap.querySelector(".aeg-lang-opt");
+      if (active) active.focus();
+    }
   }
 
   var right = document.querySelector(".header .header-right-wrap");
   if (right && !right.querySelector(".aeg-lang")) right.insertBefore(makeSwitcher("bar"), right.firstChild);
 
-  var menuHead = document.querySelector(".mobile-side-menu .side-menu-head");
-  if (menuHead && !document.querySelector(".aeg-lang-row")) {
-    var row = document.createElement("div");
-    row.className = "aeg-lang-row";
-    row.appendChild(makeSwitcher("menu"));
-    menuHead.insertAdjacentElement("afterend", row);
-  }
-
   if (!right && !document.querySelector(".aeg-lang--float")) {
     document.body.appendChild(makeSwitcher("float"));
   }
+
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest ? event.target.closest(".aeg-lang-trigger") : null;
+    if (trigger) {
+      var wrap = trigger.closest(".aeg-lang");
+      if (wrap.classList.contains("is-open")) closeMenus();
+      else openMenu(wrap, event.detail === 0);
+      return;
+    }
+    if (!event.target.closest || !event.target.closest(".aeg-lang-menu")) closeMenus();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    var wrap = event.target.closest ? event.target.closest(".aeg-lang") : null;
+    if (event.key === "Escape") {
+      var openWrap = document.querySelector(".aeg-lang.is-open");
+      if (openWrap) {
+        closeMenus();
+        openWrap.querySelector(".aeg-lang-trigger").focus();
+      }
+      return;
+    }
+    if (!wrap) return;
+    var opts = Array.prototype.slice.call(wrap.querySelectorAll(".aeg-lang-opt"));
+    var idx = opts.indexOf(document.activeElement);
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      if (!wrap.classList.contains("is-open")) {
+        openMenu(wrap, true);
+        return;
+      }
+      var step = event.key === "ArrowDown" ? 1 : -1;
+      var next = opts[(idx + step + opts.length) % opts.length] || opts[0];
+      next.focus();
+    }
+  });
+
+  document.addEventListener("focusin", function (event) {
+    if (!event.target.closest || !event.target.closest(".aeg-lang")) closeMenus();
+  });
 
   document.addEventListener("click", function (event) {
     var btn = event.target.closest ? event.target.closest("[data-set-lang]") : null;
@@ -195,7 +253,10 @@
     event.preventDefault();
     var next = btn.getAttribute("data-set-lang");
     if (next !== "uz" && next !== "ru" && next !== "en") return;
-    if (next === lang) return;
+    if (next === lang) {
+      closeMenus();
+      return;
+    }
     try {
       localStorage.setItem("aeg-lang", next);
     } catch (e) {}

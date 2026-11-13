@@ -164,7 +164,7 @@ html.aeg-cart-lock body {
 }
 
 /* "Aloqa" is already in the menu; the CTA comes back once there is room for it */
-@media (min-width: 1200px) and (max-width: 1499.98px) {
+@media (min-width: 1200px) and (max-width: 1439.98px) {
   .header .primary-header-inner .header-btn-wrap {
     display: none;
   }
@@ -201,13 +201,6 @@ html.aeg-cart-lock body {
   }
   .header .primary-header-inner .header-right-wrap {
     gap: 6px;
-  }
-}
-
-/* Smallest phones: the language switch stays in the side menu */
-@media (max-width: 359.98px) {
-  .header .header-right-wrap .aeg-lang--bar {
-    display: none;
   }
 }
 

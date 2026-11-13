@@ -42,66 +42,130 @@ html[lang="ru"] {
 }
 
 .aeg-lang {
+  position: relative;
   display: inline-flex;
-  align-items: center;
-  padding: 2px;
-  border-radius: 999px;
-  gap: 1px;
   flex: 0 0 auto;
   line-height: 1;
   vertical-align: middle;
 }
 
-.aeg-lang button {
+.aeg-lang-trigger {
   appearance: none;
   -webkit-appearance: none;
-  border: 0;
-  margin: 0;
-  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 13px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 101, 47, 0.18);
+  background: #fff;
+  color: #00652f;
   font-family: var(--cp-ff-body, "Kumbh Sans", sans-serif);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  padding: 6px 8px;
-  border-radius: 999px;
-  cursor: pointer;
   line-height: 1;
-  text-transform: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
-.aeg-lang button:focus-visible {
+.aeg-lang-trigger .fa-globe {
+  font-size: 16px;
+}
+
+.aeg-lang-chev {
+  font-size: 10px;
+  transition: transform 0.25s ease;
+}
+
+.aeg-lang-trigger:hover,
+.aeg-lang.is-open .aeg-lang-trigger {
+  border-color: #65cb3b;
+  background: rgba(101, 203, 59, 0.08);
+}
+
+.aeg-lang.is-open .aeg-lang-chev {
+  transform: rotate(180deg);
+}
+
+.aeg-lang-trigger:focus-visible,
+.aeg-lang-opt:focus-visible {
   outline: 2px solid #65cb3b;
   outline-offset: 2px;
 }
 
-.aeg-lang--bar,
-.aeg-lang--menu,
-.aeg-lang--float {
-  border: 1px solid rgba(0, 101, 47, 0.22);
+.aeg-lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 120;
+  min-width: 220px;
+  padding: 6px;
+  border-radius: 14px;
   background: #fff;
+  box-shadow: 0 18px 50px rgba(0, 40, 18, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 
-.aeg-lang--bar button,
-.aeg-lang--menu button,
-.aeg-lang--float button {
+.aeg-lang.is-open .aeg-lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.aeg-lang-opt {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  border: 0;
+  background: none;
+  padding: 11px 12px;
+  border-radius: 10px;
+  text-align: left;
+  color: #1d2b22;
+  font-family: var(--cp-ff-body, "Kumbh Sans", sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.aeg-lang-opt:hover,
+.aeg-lang-opt:focus-visible {
+  background: rgba(101, 203, 59, 0.12);
+}
+
+.aeg-lang-name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.aeg-lang-name small {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.aeg-lang-opt .fa-check {
+  color: #65cb3b;
+  visibility: hidden;
+}
+
+.aeg-lang-opt.is-active {
   color: #00652f;
+  font-weight: 700;
 }
 
-.aeg-lang--bar button.is-active,
-.aeg-lang--menu button.is-active,
-.aeg-lang--float button.is-active {
-  background: #00652f;
-  color: #fff;
-}
-
-.aeg-lang--bar button:hover:not(.is-active),
-.aeg-lang--menu button:hover:not(.is-active),
-.aeg-lang--float button:hover:not(.is-active) {
-  background: rgba(0, 101, 47, 0.08);
-}
-
-.header .primary-header-inner .header-right-wrap .aeg-lang--bar {
-  margin-right: 0;
+.aeg-lang-opt.is-active .fa-check {
+  visibility: visible;
 }
 
 .header .primary-header-inner .header-right-wrap {
@@ -115,22 +179,36 @@ html[lang="ru"] {
   }
 }
 
-@media (max-width: 767px) {
-  .aeg-lang--bar button {
-    padding: 5px 6px;
-    font-size: 11px;
-    letter-spacing: 0.02em;
+@media (max-width: 767.98px) {
+  .aeg-lang-trigger {
+    height: 40px;
+    padding: 0 10px;
+    gap: 6px;
+    font-size: 13px;
   }
 
   .header .primary-header-inner .header-right-wrap {
     gap: 6px;
-    flex-wrap: nowrap;
   }
 }
 
-.aeg-lang-row {
-  display: flex;
-  margin: -8px 0 22px;
+@media (max-width: 374.98px) {
+  .aeg-lang-chev {
+    display: none;
+  }
+
+  .aeg-lang-trigger {
+    padding: 0 9px;
+    gap: 5px;
+  }
+
+  .header .primary-header-inner .header-logo {
+    padding: 0 12px;
+  }
+
+  .header .primary-header-inner .header-logo img {
+    max-width: 92px;
+  }
 }
 
 .aeg-lang--float {
@@ -138,5 +216,8 @@ html[lang="ru"] {
   top: 18px;
   right: 18px;
   z-index: 200;
+}
+
+.aeg-lang--float .aeg-lang-trigger {
   box-shadow: 0 8px 24px rgba(0, 40, 18, 0.12);
 }
