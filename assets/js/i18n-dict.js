@@ -556,7 +556,10 @@
     ["Katalog","Каталог","Catalogue"],
     ["Ish yo'nalishlari","Направления работы","Areas of work"],
     ["Galla mahsulotlari savdosi","Торговля зерном","Grain trade"],
-    ["haqida","о компании","about the company"]
+    ["haqida","о компании","about the company"],
+    ["Yildan beri ulgurji savdo","Год начала оптовой торговли","Year our wholesale trade began"],
+    ["STIR 300627183","ИНН (STIR) 300627183","STIR (TIN) 300627183"],
+    ["Toshkent","Ташкент","Tashkent"]
   ];
 
   function fold(value) {
