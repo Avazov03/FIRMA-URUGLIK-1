@@ -82,6 +82,11 @@
   font-size: 17px;
 }
 
+/* the template's extra 15px after the search icon makes the row uneven on wide screens */
+.header .primary-header-inner .header-right-wrap .icon-wrap {
+  margin-right: 0;
+}
+
 .header .primary-header-inner .header-right-wrap .dl-search-icon:hover,
 .header .primary-header-inner .header-right-wrap .header-right-item .mobile-side-menu-toggle:hover {
   background: rgba(101, 203, 59, 0.12);
