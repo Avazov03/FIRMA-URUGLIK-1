@@ -1,13 +1,14 @@
 (function ($) {
     "use strict";
 
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, MorphSVGPlugin);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
-    // create the smooth scroller FIRST!
+    // Touch screens keep native scrolling: normalizeScroll there blocks swiping inside
+    // scrollable panels (cart drawer, side menu, search suggestions).
     let smoother = ScrollSmoother.create({
         smooth: 2,
         smoothTouch: false,
-        normalizeScroll: true,
+        normalizeScroll: ScrollTrigger.isTouch === 1 ? false : { debounce: true, allowNestedScroll: true },
         ignoreMobileResize: true,
     });
 

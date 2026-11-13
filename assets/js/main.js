@@ -101,31 +101,35 @@
         handleMasonry();
     });
 
-    $('#myTable').DataTable();
+    if ($.fn.DataTable && $("#myTable").length) $("#myTable").DataTable();
 
     $(".favorite").on("click", function () {
     $(this).find("i")
         .toggleClass("fa-regular fa-solid");
 });
 
-    // Preloader 
+    // Preloader: starts on DOM ready (not window load, which waits for every image),
+    // and is skipped for the rest of the session once it has played.
     var innerBars = document.querySelectorAll(".inner-bar");
-    var increment = 0;
+    var PRELOADED_KEY = "aeg-preloaded";
+
+    function removePreloader() {
+        $(".preloader").remove();
+    }
 
     function animateBars() {
-        if (!innerBars.length) return;
+        if (!innerBars.length) return removePreloader();
 
-        let increment = 0;
+        var increment = 0;
 
         function step() {
-            for (let i = 0; i < 2 && innerBars[i + increment]; i++) {
-                let randomWidth = Math.floor(Math.random() * 101);
-                gsap.to(innerBars[i + increment], { width: randomWidth + "%", duration: 0.5, ease: "none" });
+            for (var i = 0; i < 2 && innerBars[i + increment]; i++) {
+                gsap.to(innerBars[i + increment], { width: Math.floor(Math.random() * 101) + "%", duration: 0.2, ease: "none" });
             }
 
-            setTimeout(() => {
-                for (let i = 0; i < 2 && innerBars[i + increment]; i++) {
-                    gsap.to(innerBars[i + increment], { width: "100%", duration: 0.5, ease: "none" });
+            setTimeout(function () {
+                for (var j = 0; j < 2 && innerBars[j + increment]; j++) {
+                    gsap.to(innerBars[j + increment], { width: "100%", duration: 0.2, ease: "none" });
                 }
                 increment += 2;
 
@@ -133,27 +137,29 @@
                     step();
                 } else {
                     gsap.timeline()
-                        .to(".preloader", { "--preloader-clip": "100%", duration: 0.8, ease: "none", delay: 0.8 })
-                        .set(".preloader", { display: "none" });
-
-                    // Only animate text if it exists
-                    let textChars = gsap.utils.toArray(".text-animation-effect .char");
-                    if (textChars.length) {
-                        gsap.from(textChars, { duration: 1.5, x: 50, autoAlpha: 0, stagger: 0.1 });
-                    }
+                        .to(".preloader", { "--preloader-clip": "100%", duration: 0.45, ease: "none", delay: 0.15 })
+                        .add(removePreloader);
                 }
-            }, 200);
+            }, 90);
         }
 
         step();
     }
 
-    $(window).on("load", function () {
-        animateBars();
-        setTimeout(function () {
-            $(".preloader").remove();
-        }, 3000);
-    });
+    var preloadedThisSession = false;
+    try {
+        preloadedThisSession = sessionStorage.getItem(PRELOADED_KEY) === "1";
+        sessionStorage.setItem(PRELOADED_KEY, "1");
+    } catch (e) {}
+
+    if (preloadedThisSession || document.documentElement.classList.contains("aeg-no-preloader")) {
+        removePreloader();
+    } else {
+        $(function () {
+            animateBars();
+            setTimeout(removePreloader, 1600);
+        });
+    }
 
 
     // Zoom Effect
@@ -397,18 +403,36 @@
 
 
         // Venobox Video
-        new VenoBox({
-            selector: ".video-popup, .img-popup",
-            bgcolor: "transparent",
-            numeration: true,
-            infinigall: true,
-            spinner: "plane",
-        });
+        if (typeof VenoBox !== "undefined" && document.querySelector(".video-popup, .img-popup")) {
+            new VenoBox({
+                selector: ".video-popup, .img-popup",
+                bgcolor: "transparent",
+                numeration: true,
+                infinigall: true,
+                spinner: "plane",
+            });
+        }
 
-        // Data Background
-        $("[data-background").each(function () {
-            $(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
-        });
+        // Data Background — below-the-fold backgrounds load only when they get close to the viewport
+        function setBackground(el) {
+            el.style.backgroundImage = "url(" + el.getAttribute("data-background") + ")";
+        }
+        var bgEls = document.querySelectorAll("[data-background]");
+        if ("IntersectionObserver" in window) {
+            var bgObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    setBackground(entry.target);
+                    bgObserver.unobserve(entry.target);
+                });
+            }, { rootMargin: "600px 0px" });
+            Array.prototype.forEach.call(bgEls, function (el) {
+                if (el.getBoundingClientRect().top < window.innerHeight * 1.5) setBackground(el);
+                else bgObserver.observe(el);
+            });
+        } else {
+            Array.prototype.forEach.call(bgEls, setBackground);
+        }
 
         /* Odometer */
         $(".odometer").waypoint(
@@ -632,7 +656,8 @@
             },
             breakpoints: {
                 0: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
+                    spaceBetween: 12,
                 },
                 768: {
                     slidesPerView: 2,

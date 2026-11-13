@@ -57,7 +57,7 @@
 
   var PRODUCTS = [
     { id: "bugdoy-urugi", cat: "uruglik", img: "assets/img/shop/cat-galla-1.png", uz: "Bug'doy urug'i", ru: "Семена пшеницы", en: "Wheat seed" },
-    { id: "makka-urugi", cat: "uruglik", img: "assets/img/shop/real-galla-makka.png", uz: "Makka urug'i", ru: "Семена кукурузы", en: "Maize seed" },
+    { id: "makka-urugi", cat: "uruglik", img: "assets/img/shop/real-galla-makka.webp", uz: "Makka urug'i", ru: "Семена кукурузы", en: "Maize seed" },
     { id: "paxta-urugi", cat: "uruglik", img: PLACEHOLDER, uz: "Paxta urug'i", ru: "Семена хлопчатника", en: "Cotton seed" },
     { id: "arpa-urugi", cat: "uruglik", img: "assets/img/shop/cat-galla-2.png", uz: "Arpa urug'i", ru: "Семена ячменя", en: "Barley seed" },
     { id: "noxat-urugi", cat: "uruglik", img: PLACEHOLDER, uz: "No'xat urug'i", ru: "Семена нута", en: "Chickpea seed" },
@@ -69,24 +69,24 @@
     { id: "guava-urugi", cat: "uruglik", img: "assets/img/shop/shop-12.png", uz: "Guava urug'i", ru: "Семена гуавы", en: "Guava seed" },
     { id: "bugdoy", cat: "galla", img: "assets/img/shop/cat-galla-1.png", uz: "Bug'doy (galla)", ru: "Пшеница (зерно)", en: "Wheat (grain)" },
     { id: "arpa", cat: "galla", img: "assets/img/shop/cat-galla-2.png", uz: "Arpa", ru: "Ячмень", en: "Barley" },
-    { id: "makka", cat: "galla", img: "assets/img/shop/real-galla-makka.png", uz: "Makka (galla)", ru: "Кукуруза (зерно)", en: "Maize (grain)" },
-    { id: "sholi", cat: "galla", img: "assets/img/shop/real-galla-sholi.png", uz: "Sholi", ru: "Рис", en: "Rice" },
-    { id: "suli", cat: "galla", img: "assets/img/shop/real-galla-suli.png", uz: "Suli", ru: "Овёс", en: "Oats" },
-    { id: "javdar", cat: "galla", img: "assets/img/shop/real-galla-javdar.png", uz: "Javdar", ru: "Рожь", en: "Rye" },
-    { id: "azotli-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-azot.png", uz: "Azotli o'g'it", ru: "Азотное удобрение", en: "Nitrogen fertilizer" },
-    { id: "fosforli-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-fosfor.png", uz: "Fosforli o'g'it", ru: "Фосфорное удобрение", en: "Phosphate fertilizer" },
-    { id: "kompleks-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-kompleks.png", uz: "Kompleks o'g'it", ru: "Комплексное удобрение", en: "Compound fertilizer" },
-    { id: "gerbitsid", cat: "himoya", img: "assets/img/shop/real-himoya-gerb.png", uz: "Gerbitsid", ru: "Гербицид", en: "Herbicide" },
+    { id: "makka", cat: "galla", img: "assets/img/shop/real-galla-makka.webp", uz: "Makka (galla)", ru: "Кукуруза (зерно)", en: "Maize (grain)" },
+    { id: "sholi", cat: "galla", img: "assets/img/shop/real-galla-sholi.webp", uz: "Sholi", ru: "Рис", en: "Rice" },
+    { id: "suli", cat: "galla", img: "assets/img/shop/real-galla-suli.webp", uz: "Suli", ru: "Овёс", en: "Oats" },
+    { id: "javdar", cat: "galla", img: "assets/img/shop/real-galla-javdar.webp", uz: "Javdar", ru: "Рожь", en: "Rye" },
+    { id: "azotli-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-azot.webp", uz: "Azotli o'g'it", ru: "Азотное удобрение", en: "Nitrogen fertilizer" },
+    { id: "fosforli-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-fosfor.webp", uz: "Fosforli o'g'it", ru: "Фосфорное удобрение", en: "Phosphate fertilizer" },
+    { id: "kompleks-ogit", cat: "ogit", img: "assets/img/shop/real-ogit-kompleks.webp", uz: "Kompleks o'g'it", ru: "Комплексное удобрение", en: "Compound fertilizer" },
+    { id: "gerbitsid", cat: "himoya", img: "assets/img/shop/real-himoya-gerb.webp", uz: "Gerbitsid", ru: "Гербицид", en: "Herbicide" },
     { id: "fungitsid", cat: "himoya", img: "assets/img/shop/real-himoya-fung.png", uz: "Fungitsid", ru: "Фунгицид", en: "Fungicide" },
-    { id: "insektitsid", cat: "himoya", img: "assets/img/shop/real-himoya-insekt.png", uz: "Insektitsid", ru: "Инсектицид", en: "Insecticide" },
-    { id: "chorva-ozuqasi", cat: "ozuqa", img: "assets/img/shop/real-ozuqa-1.png", uz: "Chorva ozuqasi", ru: "Корм для скота", en: "Livestock feed" },
-    { id: "aralash-ozuqa", cat: "ozuqa", img: "assets/img/shop/real-ozuqa-2.png", uz: "Aralash ozuqa", ru: "Комбикорм", en: "Compound feed" },
+    { id: "insektitsid", cat: "himoya", img: "assets/img/shop/real-himoya-insekt.webp", uz: "Insektitsid", ru: "Инсектицид", en: "Insecticide" },
+    { id: "chorva-ozuqasi", cat: "ozuqa", img: "assets/img/shop/real-ozuqa-1.webp", uz: "Chorva ozuqasi", ru: "Корм для скота", en: "Livestock feed" },
+    { id: "aralash-ozuqa", cat: "ozuqa", img: "assets/img/shop/real-ozuqa-2.webp", uz: "Aralash ozuqa", ru: "Комбикорм", en: "Compound feed" },
   ];
 
   var SERVICES = [
     {
       id: "uruglik",
-      img: "assets/img/service/service-img-9.jpg",
+      img: "assets/img/service/service-img-9.webp",
       link: "shop.html?cat=uruglik",
       uz: {
         title: "Urug'lik ta'minoti",
@@ -115,7 +115,7 @@
     },
     {
       id: "galla",
-      img: "assets/img/service/service-img-7.jpg",
+      img: "assets/img/service/service-img-7.webp",
       link: "shop.html?cat=galla",
       uz: {
         title: "Galla savdosi",
@@ -144,7 +144,7 @@
     },
     {
       id: "ozuqa",
-      img: "assets/img/service/service-img-8.jpg",
+      img: "assets/img/service/service-img-8.webp",
       link: "shop.html?cat=ozuqa",
       uz: {
         title: "Hayvonlar uchun ozuqa",
@@ -173,7 +173,7 @@
     },
     {
       id: "yetkazish",
-      img: "assets/img/service/service-img-6.jpg",
+      img: "assets/img/service/service-img-6.webp",
       link: "shop.html",
       uz: {
         title: "Buyurtma va yetkazish",
@@ -202,7 +202,7 @@
     },
     {
       id: "maslahat",
-      img: "assets/img/service/service-img-10.jpg",
+      img: "assets/img/service/service-img-10.webp",
       link: "agronomy.html",
       uz: {
         title: "Maslahat va qo'llab-quvvatlash",

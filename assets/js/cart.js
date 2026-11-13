@@ -612,7 +612,46 @@
     });
     renderBuy();
   }
+  /* Phones: the buy box sits ~2 screens down, so mirror it in a bar fixed to the bottom. */
+  var buyBar = null;
+  function mountBuyBar() {
+    var box = document.getElementById("aegBuy");
+    if (!box || !buyState || !("IntersectionObserver" in window)) return;
+    var p = product(buyState.id);
+    buyBar = document.createElement("div");
+    buyBar.className = "aeg-buybar";
+    document.body.appendChild(buyBar);
+    buyBar.addEventListener("click", function (e) {
+      if (e.target.closest("[data-bar-add]")) {
+        addItem(buyState.id, buyState.qty, buyState.unit);
+        bump();
+        showToast(p);
+      } else if (e.target.closest("[data-open-cart]")) {
+        openDrawer();
+      }
+    });
+    var io = new IntersectionObserver(function (entries) {
+      var show = !entries[0].isIntersecting;
+      buyBar.classList.toggle("is-show", show);
+      document.body.classList.toggle("has-buybar", show);
+    });
+    io.observe(box);
+    renderBuyBar();
+  }
+  function renderBuyBar() {
+    if (!buyBar || !buyState) return;
+    var p = product(buyState.id);
+    var cur = find(buyState.id);
+    buyBar.innerHTML =
+      '<img src="' + p.img + '" alt=""/>' +
+      '<div class="aeg-buybar-txt"><strong>' + esc(pName(p)) + "</strong><span>" + esc(C.price[lang]) + "</span></div>" +
+      (cur
+        ? '<button type="button" class="aeg-btn is-done" data-open-cart><i class="fa-solid fa-check"></i> ' + esc(t.inCart) + "</button>"
+        : '<button type="button" class="aeg-btn" data-bar-add><i class="fa-regular fa-basket-shopping"></i> ' + esc(t.add) + "</button>");
+  }
+
   function renderBuy() {
+    renderBuyBar();
     var box = document.getElementById("aegBuy");
     if (!box || !buyState) return;
     var p = product(buyState.id);
@@ -908,6 +947,7 @@
   mountToast();
   mountQuickAdd();
   mountBuy();
+  mountBuyBar();
   mountPage();
   renderHeader();
 

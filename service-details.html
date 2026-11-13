@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="uz">
 <head>
 <meta charset="utf-8"/>
@@ -10,10 +10,8 @@
 <link href="assets/img/favicon.svg" rel="shortcut icon" type="image/x-icon"/>
 <!-- CSS here -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="assets/css/fontawesome.min.css" rel="stylesheet"/>
-<link href="assets/css/venobox.min.css" rel="stylesheet"/>
-<link href="assets/css/odometer.min.css" rel="stylesheet"/>
-<link href="assets/css/dataTables.min.css" rel="stylesheet"/>
+<link href="assets/css/fontawesome.subset.css" rel="stylesheet"/>
+<link href="assets/css/odometer.min.css" rel="stylesheet"/>
 <link href="assets/css/nice-select.css" rel="stylesheet"/>
 <link href="assets/css/carouselTicker.css" rel="stylesheet"/>
 <link href="assets/css/swiper.min.css" rel="stylesheet"/>
@@ -21,6 +19,7 @@
 <link href="assets/css/smart-search.css" rel="stylesheet"/>
 <link href="assets/css/i18n.css" rel="stylesheet"/>
 <link href="assets/css/cart.css" rel="stylesheet"/>
+<link href="assets/css/mobile.css" rel="stylesheet"/>
 <link href="assets/css/catalog-pages.css" rel="stylesheet"/>
 <script src="assets/js/i18n-boot.js"></script>
 </head>
@@ -221,7 +220,7 @@
 <div class="mobile-side-menu">
 <div class="side-menu-content">
 <div class="side-menu-head">
-<a href="index.html"><img alt="logo" src="assets/img/logo/logo-white.svg"/></a>
+<a href="index.html"><img alt="logo" src="assets/img/logo/logo.svg"/></a>
 <button class="mobile-side-menu-close"><i class="fa-regular fa-xmark"></i></button>
 </div>
 <div class="side-menu-wrap"></div>
@@ -258,7 +257,7 @@
 <div id="smooth-wrapper">
 <div id="smooth-content">
 <section class="breadcum-section">
-<div class="bg-img" data-background="assets/img/breadcum/breadcum-1.jpg"></div>
+<div class="bg-img" data-background="assets/img/breadcum/breadcum-1.webp"></div>
 <div class="container-fluid">
 <div class="breadcum-content">
 <h1 class="title" id="aegCrumbTitle" data-duration="1" data-split="line" data-stagger="0.2" data-text-animation="fade-in-bottom-line">Xizmat tafsilotlari</h1>
@@ -290,7 +289,7 @@
 <div class="row mt-70 gy-4 align-items-stretch">
 <div class="col-xl-5 col-lg-6">
 <div class="aeg-service-media">
-<img alt="" id="aegServiceImage" src="assets/img/service/service-img-9.jpg"/>
+<img loading="lazy" decoding="async" alt="" id="aegServiceImage" src="assets/img/service/service-img-9.webp"/>
 </div>
 </div>
 <div class="col-xl-7 col-lg-6">
@@ -335,7 +334,7 @@
 <div class="row">
 <div class="col-xl-5">
 <div class="section-heading pt-130">
-<h2 class="sub-heading"><img alt="" src="assets/img/logo/sec-logo.svg"/>
+<h2 class="sub-heading"><img loading="lazy" decoding="async" alt="" src="assets/img/logo/sec-logo.svg"/>
                                         Ish jarayoni
                                     </h2>
 <h2 class="section-title tz-itm-title">
@@ -345,7 +344,7 @@
 </div>
 <div class="col-xl-7">
 <div class="image">
-<img alt="" src="assets/img/images/work-process-1.jpg"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/images/work-process-1.webp"/>
 </div>
 </div>
 </div>
@@ -353,7 +352,7 @@
 <div class="process-item inner-process-item">
 <span>Qadam - [01]</span>
 <div class="icon">
-<img alt="" src="assets/img/icon/step-icon-1.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/icon/step-icon-1.png"/>
 </div>
 <h3 class="title">
                                     Dalani rejalashtirish
@@ -366,7 +365,7 @@
 <div class="process-item inner-process-item">
 <span>Qadam - [02]</span>
 <div class="icon">
-<img alt="" src="assets/img/icon/step-icon-2.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/icon/step-icon-2.png"/>
 </div>
 <h3 class="title">
                                     Ekish va yetishtirish
@@ -379,7 +378,7 @@
 <div class="process-item inner-process-item">
 <span>Qadam - [03]</span>
 <div class="icon">
-<img alt="" src="assets/img/icon/step-icon-3.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/icon/step-icon-3.png"/>
 </div>
 <h3 class="title">
                                     O'simlik parvarishi
@@ -392,7 +391,7 @@
 <div class="process-item inner-process-item">
 <span>Qadam - [04]</span>
 <div class="icon">
-<img alt="" src="assets/img/icon/step-icon-4.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/icon/step-icon-4.png"/>
 </div>
 <h3 class="title">
                                     Optimallashtirilgan hosil yig'ish
@@ -408,7 +407,7 @@
 <!-- ./ process-section -->
 <div class="question-section pb-130">
 <div class="qna-image">
-<img alt="" src="assets/img/images/qna-image-2.jpg"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/images/qna-image-2.webp"/>
 </div>
 <div class="container">
 <div class="question-content-wrap">
@@ -416,48 +415,48 @@
 <h2 class="contact-title mb-32">
                                     Savolingiz bormi: <br/> Fermerlik
                                 </h2>
-<div class="row">
+<form action="#" data-aeg-form="question" method="post"><div class="row">
 <div class="col-lg-6">
 <div class="form-item">
-<input class="form-control" placeholder="To'liq ism*" type="text"/>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-item">
-<input class="form-control" placeholder="Telefon*" type="text"/>
+<input autocomplete="name" class="form-control" name="fullname" placeholder="To'liq ism*" type="text"/>
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-item">
-<input class="form-control" placeholder="Email*" type="email"/>
+<input autocomplete="tel" class="form-control" inputmode="tel" name="phone" placeholder="Telefon*" type="tel"/>
 </div>
 </div>
 <div class="col-lg-6">
 <div class="form-item">
-<input class="form-control" placeholder="Turni tanlang*" type="text"/>
+<input autocomplete="email" class="form-control" inputmode="email" name="email" placeholder="Email*" type="email"/>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="form-item">
+<input class="form-control" name="topic" placeholder="Turni tanlang*" type="text"/>
 </div>
 </div>
 <div class="col-lg-12">
 <div class="form-item">
-<textarea class="form-control message" placeholder="Xabar*" rows="4"></textarea>
+<textarea class="form-control message" name="message" placeholder="Xabar*" rows="4"></textarea>
 </div>
 </div>
 <div class="col-lg-12">
 <button class="contact-btn mt-24" type="submit">Xabar yuborish</button>
 </div>
-</div>
+</div></form>
 </div>
 </div>
 </div>
 </div>
 <!-- ./ question-section -->
 <section class="faq-section">
-<div class="bg-img" data-background="assets/img/bg-img/faq-bg-shape.png"></div>
+<div class="bg-img"></div>
 <div class="container">
 <div class="row gy-5">
 <div class="col-lg-6">
 <div class="section-heading">
-<h3 class="sub-heading"><img alt="" src="assets/img/logo/sec-logo.svg"/>savol va javob
+<h3 class="sub-heading"><img loading="lazy" decoding="async" alt="" src="assets/img/logo/sec-logo.svg"/>savol va javob
                                     </h3>
 <h2 class="section-title tz-itm-title">
                                         Qishloq xo'jaligi haqida tez-tez beriladigan savollar
@@ -537,42 +536,42 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-1.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-1.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-2.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-2.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-3.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-3.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-4.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-4.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-5.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-5.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-6.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-6.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-7.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-7.png"/>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="brand-item">
-<img alt="" src="assets/img/brands/brand-8.png"/>
+<img loading="lazy" decoding="async" alt="" src="assets/img/brands/brand-8.png"/>
 </div>
 </div>
 </div>
@@ -582,7 +581,7 @@
 <!-- ./ brand-section -->
 <section class="footer-section-2 bg-color-1 pt-90">
 <div class="shape">
-<img alt="" class="shape-1" src="assets/img/shapes/footer-shape-1.png"/>
+<img loading="lazy" decoding="async" alt="" class="shape-1" src="assets/img/shapes/footer-shape-1.png"/>
 </div>
 <div class="container">
 <div class="row gy-5 align-items-center footer-main-row">
@@ -682,34 +681,30 @@
 <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
 <!--scrollup-->
 <!-- JS here -->
-<script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
-<script src="assets/js/vendor/bootstrap-bundle.js"></script>
-<script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
-<script src="assets/js/vendor/waypoints.min.js"></script>
-<script src="assets/js/vendor/venobox.min.js"></script>
-<script src="assets/js/vendor/dataTables.min.js"></script>
-<script src="assets/js/vendor/odometer.min.js"></script>
-<script src="assets/js/vendor/meanmenu.js"></script>
-<script src="assets/js/vendor/jquery.isotope.js"></script>
-<script src="assets/js/vendor/swiper.min.js"></script>
-<script src="assets/js/vendor/split-type.min.js"></script>
-<script src="assets/js/vendor/split-text.js"></script>
-<script src="assets/js/vendor/gsap.min.js"></script>
-<script src="assets/js/vendor/scroll-trigger.min.js"></script>
-<script src="assets/js/vendor/smooth-scroll.js"></script>
-<script src="assets/js/vendor/MorphSVGPlugin3.min.js"></script>
-<script src="assets/js/vendor/jquery.carouselTicker.js"></script>
-<script src="assets/js/vendor/nice-select.js"></script>
-<script src="assets/js/vendor/drift.min.js"></script>
-<script src="assets/js/contact.js"></script>
-<script src="assets/js/slider.js"></script>
-<script src="assets/js/search-index.js"></script>
-<script src="assets/js/smart-search.js"></script>
 <script src="assets/js/i18n-dict.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/catalog-data.js"></script>
 <script src="assets/js/catalog-pages.js"></script>
 <script src="assets/js/cart.js"></script>
+<script src="assets/js/mobile.js"></script>
+<script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
+<script src="assets/js/vendor/bootstrap-bundle.js"></script>
+<script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
+<script src="assets/js/vendor/waypoints.min.js"></script>
+<script src="assets/js/vendor/odometer.min.js"></script>
+<script src="assets/js/vendor/meanmenu.js"></script>
+<script src="assets/js/vendor/swiper.min.js"></script>
+<script src="assets/js/vendor/split-type.min.js"></script>
+<script src="assets/js/vendor/split-text.js"></script>
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/scroll-trigger.min.js"></script>
+<script src="assets/js/vendor/smooth-scroll.js"></script>
+<script src="assets/js/vendor/jquery.carouselTicker.js"></script>
+<script src="assets/js/vendor/nice-select.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/smart-search.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/gsap.js"></script>
 </body>

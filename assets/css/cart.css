@@ -438,7 +438,7 @@ html.aeg-cart-lock body {
   border-right: 1px solid rgba(0, 101, 47, 0.12);
   text-align: center;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   color: #00652f;
   background: transparent;
   padding: 0 4px;
@@ -961,6 +961,23 @@ html.aeg-cart-lock body {
 }
 
 @media (max-width: 767.98px) {
+  .aeg-stepper {
+    height: 44px;
+  }
+  .aeg-step {
+    width: 42px;
+  }
+  .aeg-unit {
+    padding: 14px 14px;
+  }
+  .aeg-line-remove {
+    width: 44px;
+    height: 44px;
+    margin: -10px -12px 0 0;
+  }
+  .aeg-line-cat {
+    font-size: 13px;
+  }
   .aeg-cart-head,
   .aeg-cart-body,
   .aeg-cart-foot {

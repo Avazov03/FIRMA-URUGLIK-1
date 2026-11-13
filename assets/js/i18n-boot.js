@@ -10,6 +10,11 @@
     }
   } catch (e) {}
   document.documentElement.setAttribute("lang", lang);
+  try {
+    if (sessionStorage.getItem("aeg-preloaded") === "1" || window.matchMedia("(pointer: coarse)").matches) {
+      document.documentElement.classList.add("aeg-no-preloader");
+    }
+  } catch (e) {}
   if (lang === "ru") {
     var font = document.createElement("link");
     font.rel = "stylesheet";
