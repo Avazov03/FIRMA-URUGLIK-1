@@ -507,7 +507,16 @@
     ["Maqolalar", "Статьи", "Articles"],
     ["Atrof-muhitga ta'sirni kamaytirish — aqlli fermerlik", "Снижение воздействия на среду — точное земледелие", "Reducing environmental impact — smart farming"],
     ["Yashil kelajakni birga quramiz: aqlli fermerlik", "Вместе к зелёному будущему: точное земледелие", "A greener future together: smart farming"],
-    ["Kompaniya haqida qisqa ma'lumot", "Коротко о компании", "A short note about the company"]
+    ["Kompaniya haqida qisqa ma'lumot", "Коротко о компании", "A short note about the company"],
+    ["Buyurtma va", "Заказ и", "Order and"],
+    ["yetkazish", "поставка", "delivery"],
+    ["So'rov mavzusi", "Тема запроса", "Request topic"],
+    ["So'rov yuborish", "Отправить запрос", "Send request"],
+    ["O'xshash mahsulotlar", "Похожие товары", "Similar products"],
+    ["Asosiy jihatlar", "Главное", "Key points"],
+    ["Xizmat tafsilotlari", "Подробности услуги", "Service details"],
+    ["Boshqa xizmatlar", "Другие услуги", "Other services"],
+    ["Mahsulotlarni ko'rish", "Смотреть продукцию", "View products"]
   ];
 
   function fold(value) {

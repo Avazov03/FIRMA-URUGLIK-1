@@ -119,6 +119,7 @@
       return;
     }
     if (node.nodeType !== 1) return;
+    if (node.tagName === "TEXTAREA") translateAttr(node);
     if (SKIP[node.tagName]) return;
     if (node.classList && node.classList.contains("aeg-lang")) return;
     translateAttr(node);

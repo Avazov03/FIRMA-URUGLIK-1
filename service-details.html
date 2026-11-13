@@ -20,6 +20,7 @@
 <link <link href="assets/css/main.css" rel="stylesheet"/>
 <link href="assets/css/smart-search.css" rel="stylesheet"/>
 <link href="assets/css/i18n.css" rel="stylesheet"/>
+<link href="assets/css/catalog-pages.css" rel="stylesheet"/>
 <script src="assets/js/i18n-boot.js"></script>
 </head>
 <body>
@@ -104,13 +105,10 @@
 <li><a href="partners.html">Hamkorlar</a></li>
 <li><a href="agronomy.html">Agronomiya</a></li>
 <li><a href="service.html">Xizmat</a></li>
-<li><a href="service-details.html">Xizmat tafsiloti</a></li>
 <li><a href="team.html">Jamoa</a></li>
-<li><a href="team-details.html">Jamoa batafsil</a></li>
 
 <li><a href="faq.html">Savol-javob</a></li>
 
-<li><a href="error.html">404 xato</a></li>
 </ul>
 </li>
 <li>
@@ -262,74 +260,67 @@
 <div class="bg-img" data-background="assets/img/breadcum/breadcum-1.jpg"></div>
 <div class="container-fluid">
 <div class="breadcum-content">
-<h1 class="title" data-duration="1" data-split="line" data-stagger="0.2" data-text-animation="fade-in-bottom-line">
-                                Xizmat tafsilotlari
-                            </h1>
+<h1 class="title" id="aegCrumbTitle" data-duration="1" data-split="line" data-stagger="0.2" data-text-animation="fade-in-bottom-line">Xizmat tafsilotlari</h1>
 <h2 class="sub-title">
 <a class="home" href="index.html">Bosh sahifa </a>
                                 -
-                                <a class="inner-page" href="service-details.html">Xizmat tafsilotlari</a>
+                                <a class="inner-page" id="aegCrumbLink" href="service.html">Xizmatlar</a>
 </h2>
 </div>
 </div>
 </section>
 <!-- ./ breadcum-section -->
-<section class="service-details-section fade-wrapper pt-130 pb-130">
+<section class="service-details-section fade-wrapper pt-130 pb-130" id="aegService">
 <div class="container">
 <div class="row">
 <div class="col-xl-6">
 <div class="section-heading">
-<h2 class="section-title tz-itm-title">Premium obodonlashtirish <br/> Zamonaviy bog'lar uchun yechimlar
-                                    </h2>
+<h2 class="section-title tz-itm-title" id="aegServiceHeading">Xizmat tafsilotlari</h2>
 </div>
 </div>
 <div class="col-xl-6 fade-top">
 <div class="service-details-txt">
-<p class="desc">
-                                        Biz innovatsion dizayn, mohir ustalik va barqaror amaliyotlarni birlashtirgan, zamonaviy bog'lar uchun moslashtirilgan premium obodonlashtirish yechimlarini taklif etamiz.
-                                    </p>
-<p class="desc mt-32">
-                                        Har bir loyiha estetika, funksionallik va uzoq muddatli chidamlilikka e'tibor bilan amalga oshiriladi, shunda tashqi maydoningiz nafaqat chiroyli, balki qulay va parvarishlash oson bo'ladi.
-                                    </p>
-<ul class="list mt-32">
-<li>
-<i class="fa-regular fa-circle-check"></i> Bozor tadqiqoti va mijozlar tahlili
-                                        </li>
-<li>
-<i class="fa-regular fa-circle-check"></i> MVP rejalashtirish va amalga oshirish
-                                        </li>
-<li>
-<i class="fa-regular fa-circle-check"></i> Foydalanuvchiga yo'naltirilgan dizayn va tadqiqot
-                                        </li>
-<li>
-<i class="fa-regular fa-circle-check"></i> MVP ishlab chiqish va sinovdan o'tkazish
-                                        </li>
-</ul>
+<p class="desc" id="aegServiceP1"></p>
+<p class="desc mt-32" id="aegServiceP2"></p>
+<ul class="list mt-32" id="aegServiceList"></ul>
 </div>
 </div>
 </div>
-<div class="row mt-70">
-<div class="col-xl-12">
-<div class="image-1">
-<img alt="" src="assets/img/service/service-inner.jpg"/>
+<div class="row mt-70 gy-4 align-items-stretch">
+<div class="col-xl-5 col-lg-6">
+<div class="aeg-service-media">
+<img alt="" id="aegServiceImage" src="assets/img/service/service-img-9.jpg"/>
 </div>
 </div>
+<div class="col-xl-7 col-lg-6">
+<div class="aeg-service-side">
+<p class="desc" id="aegServiceP3"></p>
+<div class="aeg-service-actions">
+<a class="cp-primary-btn" id="aegServiceRequest" href="contact.html">
+<span class="btn-inner">
+<span class="btn-left">
+<i class="fa-regular fa-arrow-right"></i>
+</span>
+<span class="btn-text" data-text="So'rov yuborish"></span>
+<span class="btn-right">
+<i class="fa-regular fa-arrow-right"></i>
+</span>
+</span>
+</a>
+<a class="cp-primary-btn heading-color" id="aegServiceProducts" href="contact.html">
+<span class="btn-inner">
+<span class="btn-left">
+<i class="fa-regular fa-arrow-right"></i>
+</span>
+<span class="btn-text" data-text="Mahsulotlarni ko'rish"></span>
+<span class="btn-right">
+<i class="fa-regular fa-arrow-right"></i>
+</span>
+</span>
+</a>
 </div>
-<div class="row">
-<div class="col-xl-12">
-<div class="service-details-txt-2">
-<p class="desc mt-48">
-                                        Mahsulotni muvaffaqiyatli ishga tushirish uchun mahsulot strategiyasini bozor talabi, mijozlar tahlili va biznes maqsadlari bilan uyg'unlashtiramiz. Tizimli rejalashtirish, sinov va funksiyalararo hamkorlik orqali noaniqlikni kamaytirib, raqobatli bozorlarga tayyor, kengaytiriladigan va daromadga yo'naltirilgan yechimlar yaratamiz.
-
-                                    </p>
-<p class="desc mt-32">
-                                        Mahsulotni muvaffaqiyatli ishga tushirish uchun mahsulot strategiyasini bozor talabi, mijozlar tahlili va biznes maqsadlari bilan uyg'unlashtiramiz. Tizimli rejalashtirish, sinov va funksiyalararo hamkorlik orqali noaniqlikni kamaytirib, kengaytiriladigan
-
-                                    </p>
-<p class="desc mt-32">
-                                        Tadqiqotdan joriy etishgacha har bir qaror bozor talabiga mosligi va biznesni kengaytirish imkoniyatini ta'minlashiga ishonch hosil qilamiz. Tizimli uyg'unlashtirish jarayonimiz strategiya, dizayn va muhandislikni birlashtirib, yuqori samarali raqamli mahsulotlar yaratadi.
-
-                                    </p>
+<h3 class="aeg-other-title" id="aegOtherServicesTitle">Boshqa xizmatlar</h3>
+<ul class="aeg-other-list" id="aegOtherServices"></ul>
 </div>
 </div>
 </div>
@@ -715,6 +706,8 @@
 <script src="assets/js/smart-search.js"></script>
 <script src="assets/js/i18n-dict.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/catalog-data.js"></script>
+<script src="assets/js/catalog-pages.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/gsap.js"></script>
 </body>

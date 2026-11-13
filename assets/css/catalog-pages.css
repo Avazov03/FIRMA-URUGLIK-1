@@ -1,0 +1,137 @@
+/* Product and service detail pages (shop-details / service-details) */
+
+.aeg-product-media {
+  width: 100%;
+  max-width: 572px;
+  aspect-ratio: 1 / 1;
+  background: #faf8eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  overflow: hidden;
+}
+
+.aeg-product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aeg-product-cat {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(101, 203, 59, 0.15);
+  color: var(--cp-color-heading-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.product-details-content .price-wrap .title {
+  line-height: 1.15;
+}
+
+.product-details-content .price-wrap .num {
+  color: var(--cp-color-heading-primary);
+  font-weight: 600;
+}
+
+.aeg-product-actions {
+  flex-wrap: wrap;
+  gap: 24px 32px;
+}
+
+.aeg-product-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--cp-color-heading-primary);
+}
+
+.aeg-product-call:hover {
+  color: var(--cp-color-theme-primary);
+}
+
+.aeg-service-media {
+  height: 100%;
+  min-height: 370px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.aeg-service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aeg-service-side {
+  height: 100%;
+  background: var(--cp-color-bg-1, #faf8eb);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.aeg-service-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.aeg-other-title {
+  margin: 40px 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--cp-color-heading-primary);
+}
+
+.aeg-other-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+}
+
+.aeg-other-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 101, 47, 0.12);
+  font-weight: 600;
+  color: var(--cp-color-heading-primary);
+}
+
+.aeg-other-list a i {
+  rotate: -45deg;
+  transition: rotate 0.3s ease;
+  color: var(--cp-color-theme-primary);
+}
+
+.aeg-other-list a:hover i {
+  rotate: 0deg;
+}
+
+@media (max-width: 767px) {
+  .aeg-product-media {
+    padding: 28px;
+  }
+
+  .aeg-service-side {
+    padding: 28px 20px;
+  }
+
+  .aeg-other-list {
+    grid-template-columns: 1fr;
+  }
+}
