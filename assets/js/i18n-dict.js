@@ -562,7 +562,8 @@
     ["Toshkent","Ташкент","Tashkent"],
     ["O'g'it va himoya vositalari","Удобрения и средства защиты","Fertilisers and crop protection"],
     ["Katalogda o'g'itlar va","В каталоге — удобрения","Fertilisers and"],
-    ["o'simlik himoyasi","и защита растений","crop protection in the catalogue"]
+    ["o'simlik himoyasi","и защита растений","crop protection in the catalogue"],
+    ["Kompaniya","Компания","Company"]
   ];
 
   function fold(value) {

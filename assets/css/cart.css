@@ -170,6 +170,27 @@ html.aeg-cart-lock body {
   }
 }
 
+/* Uzbek labels are the longest; tighten spacing where the menu would otherwise wrap */
+@media (min-width: 1200px) and (max-width: 1299.98px) {
+  .header .primary-header-inner .header-left-wrap {
+    gap: 24px;
+  }
+  .header .primary-header-inner .header-menu-wrap ul li {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1599.98px) {
+  .header .primary-header-inner .header-left-wrap {
+    gap: 32px;
+  }
+  .header .primary-header-inner .header-menu-wrap ul li {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
 /* Inline menu no longer fits next to language + cart: use the side menu, as on phones */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .header .primary-header-inner .header-menu-wrap {
