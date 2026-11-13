@@ -499,6 +499,27 @@
   height: auto;
 }
 
+/* ---------- home service carousel ---------- */
+/* Same box as the heading's .container, so only whole cards are visible */
+.service-section .service-container {
+  max-width: 1345px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.service-carousel .swiper-slide {
+  height: auto;
+}
+
+.service-carousel .service-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-carousel .service-item .image {
+  margin-top: auto;
+}
+
 /* ---------- hero fact card ---------- */
 .aeg-hero-stat {
   background: var(--cp-color-common-white);

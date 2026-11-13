@@ -559,7 +559,10 @@
     ["haqida","о компании","about the company"],
     ["Yildan beri ulgurji savdo","Год начала оптовой торговли","Year our wholesale trade began"],
     ["STIR 300627183","ИНН (STIR) 300627183","STIR (TIN) 300627183"],
-    ["Toshkent","Ташкент","Tashkent"]
+    ["Toshkent","Ташкент","Tashkent"],
+    ["O'g'it va himoya vositalari","Удобрения и средства защиты","Fertilisers and crop protection"],
+    ["Katalogda o'g'itlar va","В каталоге — удобрения","Fertilisers and"],
+    ["o'simlik himoyasi","и защита растений","crop protection in the catalogue"]
   ];
 
   function fold(value) {

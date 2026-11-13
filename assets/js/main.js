@@ -493,44 +493,29 @@
 
         // Service Carousel
         var swiperService = new Swiper(".service-carousel", {
-            slidesPerView: 5,
+            slidesPerView: 1,
             spaceBetween: 24,
             loop: true,
-            autoplay: true,
-            grabcursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            grabCursor: true,
             speed: 600,
             navigation: {
                 nextEl: '.swiper-arrow .swiper-prev',
                 prevEl: '.swiper-arrow .swiper-next',
             },
             breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    slidesPerGroup: 1,
-                },
-                467: {
-                    slidesPerView: 1.2,
-                },
-                767: {
+                576: {
                     slidesPerView: 2,
                 },
-                1024: {
-                    slidesPerView: 2.3,
-                },
-                1199: {
+                992: {
                     slidesPerView: 3,
                 },
-                1399: {
-                    slidesPerView: 3,
-                },
-                1499: {
-                    slidesPerView: 3.6,
-                },
-                1599: {
-                    slidesPerView: 4.1,
-                },
-                1699: {
-                    slidesPerView: 5.1,
+                1400: {
+                    slidesPerView: 4,
                 },
             },
         });
