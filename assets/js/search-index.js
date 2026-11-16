@@ -294,7 +294,7 @@ window.AEG_SEARCH_INDEX = [
     type: "page",
     title: "Biz haqimizda",
     url: "about.html",
-    keywords: "kompaniya firma about agro export group mchj stir 300627183",
+    keywords: "kompaniya firma about agro export group mchj",
     desc: "Kompaniya haqida",
   },
   {
